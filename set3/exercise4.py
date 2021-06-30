@@ -24,12 +24,29 @@ def binary_search(low, high, actual_number):
     Use the VS Code debugging tools a lot here. It'll make understanding 
     things much easier.
     """
-    tries = 0
-    guess = 0
-
-    # Write your code in here
-
+    low_bound = int(low)
+    high_bound = int (high)
+    alist = []
+    guess = []
+    tries = 0 
+    for i in range(low_bound , high_bound , 1):
+        alist.append(i)
+    n = len(alist)
+    mid = n // 2
+    while not actual_number == alist[mid]:
+        if actual_number < alist[mid]:
+            tries = tries + 1
+            guess.append(alist[mid])
+            alist = alist[: mid]
+            mid = mid // 2
+        elif actual_number > alist[mid]:
+            tries = tries + 1
+            guess.append(alist[mid])
+            alist = alist[ mid + 1 : ]
+            mid = mid // 2
     return {"guess": guess, "tries": tries}
+    # Write your code in here
+#python ../course/set3/tests.py 
 
 
 if __name__ == "__main__":

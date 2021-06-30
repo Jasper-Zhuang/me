@@ -7,6 +7,38 @@ import random
 
 
 def advancedGuessingGame():
+    print("\nWelcome to the guessing game!")
+    print("A number between _ and _ ?")
+    lowerBound = input("Enter an lower bound: ")
+    try:
+        lowerBound = int(lowerBound)
+    except:
+       lowerBound= input("Enter an right lower bound: ")
+    lowerBound = int(lowerBound)
+    print("OK then, a number between {} and _ ?".format(lowerBound))
+    upperBound = input("Enter an right upper bound: ")
+    try:
+        upperBound = int(upperBound)
+    except:
+       upperBound = input("Enter an upper bound: ")
+    print("OK then, a number between {} and {} ?".format(lowerBound , upperBound))
+    actualNumber = random.randint(lowerBound, upperBound)
+    guessed = False
+    while not guessed:
+        guessedNumber = int(input("Guess a number: "))
+        print("You guessed {},".format(guessedNumber),)
+        if guessedNumber == actualNumber:
+            print("You got it!! It was {}".format(actualNumber))
+            guessed = True
+        elif guessedNumber < actualNumber:
+            print("Too small, try again :'(")
+        elif guessedNumber > actualNumber:
+            print("Too big, try again :'(")
+        else:
+            print("so folish! :'(")
+    return "You got it!"
+
+
     """Play a guessing game with a user.
 
     The exercise here is to rewrite the exampleGuessingGame() function
@@ -25,8 +57,9 @@ def advancedGuessingGame():
     Remember to think modular. Try to keep your functions small and single
     purpose if you can!
     """
+    
 
-    return "You got it!"
+    
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
 
