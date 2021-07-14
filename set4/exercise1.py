@@ -130,7 +130,6 @@ def pokedex(low=1, high=5):
 
 def diarist():
     """Read gcode and find facts about it.
-
     Read in Trispokedovetiles(laser).gcode and count the number of times the
     laser is turned on and off. That's the command "M10 P1".
     Write the answer (a number) to a file called 'lasers.pew' in the Set4 directory.
@@ -142,6 +141,7 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
+    the_number = json.('lasers.pew')
     pass
 
 
