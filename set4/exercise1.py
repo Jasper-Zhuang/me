@@ -141,7 +141,7 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
-    the_number = json.('lasers.pew')
+    the_number = json('lasers.pew')
     pass
 
 
