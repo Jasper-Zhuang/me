@@ -142,6 +142,15 @@ def diarist():
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
     the_number = json('lasers.pew')
+    count=0
+    with open('Trispokedovetiles(laser).gode','r') as f:
+        lines = f.readlines()
+        for line in lines:
+            if 'M10 P1' in line.upper():
+                count = count + 1
+    f = open('lasers.pew','w')
+    f.write(str(count))
+    f.close()
     pass
 
 
